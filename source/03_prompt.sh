@@ -59,7 +59,7 @@ function prompt_git() {
   flags="$(
     echo "$status" | awk 'BEGIN {r=""} \
         /^(# )?Changes to be committed:$/        {r=r "+"}\
-        /^(# )?Changes not staged for commit:$/  {r=r "!"}\
+        /^(# )?Changes not staged for commit:$/  {r=r "+"}\
         /^(# )?Untracked files:$/                {r=r "?"}\
       END {print r}'
   )"
@@ -124,8 +124,6 @@ function prompt_command() {
   PS1="\n"
   # svn: [repo:lastchanged]
   # PS1="$PS1$(prompt_svn)"
-  # git: [branch:flags]
-  # PS1="$PS1$(prompt_git)"
   # hg:  [branch:flags]
   # PS1="$PS1$(prompt_hg)"
   # misc: [cmd#:hist#]
@@ -135,11 +133,13 @@ function prompt_command() {
   #PS1="$PS1\n"
   # date: [HH:MM:SS]
   PS1="$PS1$c1[$c0$(date +"%H$c1:$c0%M$c1:$c0%S")$c1]$c9"
+  # git: [branch:flags]
+  PS1="$PS1$(prompt_git)"
   # working dir
-  PS1="$PS1 \w"
+  PS1="$PS1:\w"
   # exit code: 127
   PS1="$PS1$(prompt_exitcode "$exit_code")"
-  PS1="$PS1 \$ "
+  PS1="$PS1:\$ "
   # put prompt in title bar of terminal
   PS1="\[\033]0;\u@\h \w \007\]$PS1"
 }
