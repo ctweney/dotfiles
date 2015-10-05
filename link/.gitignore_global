@@ -57,6 +57,7 @@ Desktop.ini
 
 # NPM
 .npmignore
+npm-debug.log
 
 # Vim
 .swp

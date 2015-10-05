@@ -1,0 +1,34 @@
+[core]
+        excludesfile = ~/.gitignore
+	pager = less -r
+
+[push]
+	default = current
+
+[user]
+	name = Chris Tweney
+	email = chris@media.berkeley.edu
+
+[colour]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+
+[alias]
+	st = status
+	ci = commit -a -v
+	co = checkout
+	br = branch
+	unstash = stash apply
+
+[merge]
+	tool = araxis
+	summary = true
+
+[diff]
+	tool = araxis
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
