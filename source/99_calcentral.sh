@@ -1,4 +1,4 @@
-export PATH=$PATH:/Users/christweney/bin:/Users/christweney/dev/tools/bin:$HOME/.rvm/bin:/opt/X11/bin
+export PATH=$PATH:$HOME/.rvm/bin:/opt/X11/bin
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/"
 
 # JRuby for devs
