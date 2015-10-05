@@ -138,7 +138,7 @@ function prompt_command() {
   # working dir
   PS1="$PS1:\w"
   # exit code: 127
-  PS1="$PS1$(prompt_exitcode "$exit_code")"
+  # PS1="$PS1$(prompt_exitcode "$exit_code")"
   PS1="$PS1:\$ "
   # put prompt in title bar of terminal
   PS1="\[\033]0;\u@\h \w \007\]$PS1"
