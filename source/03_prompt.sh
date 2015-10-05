@@ -64,9 +64,9 @@ function prompt_git() {
       END {print r}'
   )"
   if [[ "$flags" ]]; then
-    output="$output$c1:$c0$flags"
+    output="$c2$output:$flags"
   fi
-  echo "$c1[$c0$output$c1]$c9"
+  echo "$c0[$output$c0]$c9"
 }
 
 # hg status.
@@ -132,7 +132,7 @@ function prompt_command() {
   #PS1="$PS1$c1[$c0\u$c1@$c0\h$c1:$c0\w$c1]$c9"
   #PS1="$PS1\n"
   # date: [HH:MM:SS]
-  PS1="$PS1$c1[$c0$(date +"%H$c1:$c0%M$c1:$c0%S")$c1]$c9"
+  PS1="$PS1$c1[$(date +"%H:%M:%S")]$c9"
   # git: [branch:flags]
   PS1="$PS1$(prompt_git)"
   # working dir
