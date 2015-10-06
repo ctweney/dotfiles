@@ -45,7 +45,7 @@ alias prompt_getcolors='prompt_colors[9]=; local i; for i in ${!prompt_colors[@]
 # Exit code of previous command.
 function prompt_exitcode() {
   prompt_getcolors
-  [[ $1 != 0 ]] && echo " $c2$1$c9"
+  [[ $1 != 0 ]] && echo "$c2[exit code: $1]$c9\n"
 }
 
 # Git status.
@@ -132,14 +132,15 @@ function prompt_command() {
   # path: [user@host:path]
   #PS1="$PS1$c1[$c0\u$c1@$c0\h$c1:$c0\w$c1]$c9"
   #PS1="$PS1\n"
+  # exit code: 127
+  PS1="$PS1$(prompt_exitcode "$exit_code")"
   # date: [HH:MM:SS]
   PS1="$PS1$c1[$(date +"%H:%M:%S")]$c9"
+  PS1="$PS1$c1 \u@\h $c9"
   # git: [branch:flags]
-  PS1="$PS1$(prompt_git)"
+  PS1="$PS1$(prompt_git)\n"
   # working dir
-  PS1="$PS1:\w"
-  # exit code: 127
-  # PS1="$PS1$(prompt_exitcode "$exit_code")"
+  PS1="$PS1\w"
   PS1="$PS1:\$ "
   # put prompt in title bar of terminal
   PS1="\[\033]0;\u@\h \w \007\]$PS1"
