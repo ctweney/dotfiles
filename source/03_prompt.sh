@@ -135,7 +135,7 @@ function prompt_command() {
   # exit code: 127
   PS1="$PS1$(prompt_exitcode "$exit_code")"
   # date: [HH:MM:SS]
-  PS1="$PS1$c1[$(date +"%H:%M:%S")]$c9"
+  PS1="$PS1$c1[$(date +"%H:%M:%S") / $(date -u +"%H:%M:%SZ")]$c9"
   PS1="$PS1$c1 \u@\h $c9"
   # git: [branch:flags]
   PS1="$PS1$(prompt_git)\n"
