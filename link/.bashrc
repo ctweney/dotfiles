@@ -14,6 +14,9 @@ function src() {
     for file in $DOTFILES/source/*; do
       source "$file"
     done
+    for file in $DOTFILES/source_secrets/*; do
+      source "$file"
+    done
   fi
 }
 
