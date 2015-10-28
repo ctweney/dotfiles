@@ -16,6 +16,8 @@ MESSAGE=$(git log -1 HEAD --pretty=format:%s)
 DATE_TODAY=$(date +"%Y-%m-%d")
 
 # OPTIONAL - Label
-LABEL='git commit'
+PROJECT_DIR=`git rev-parse --show-toplevel`
+PROJECT=`basename $PROJECT_DIR`
+LABEL="commit to $PROJECT"
 
   curl --data "key=$API_KEY&highlight_date=$DATE_TODAY&description=$MESSAGE&source=$LABEL" https://www.rescuetime.com/anapi/highlights_post

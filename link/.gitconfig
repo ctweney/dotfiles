@@ -3,7 +3,7 @@
 	pager = less
 
 [push]
-	default = tracking
+	default = current
 
 [user]
 	name = Chris Tweney
