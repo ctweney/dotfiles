@@ -4,4 +4,9 @@ if [ `hostname` == "chronos" ]; then
 	export PYTHONPATH=$SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.8.2.1-src.zip:$HOME/dev/rails4-rescuetime/p3rt
 	export PYSPARK_PYTHON=python3
 	export PATH=$PATH:$SPARK_HOME/bin
+
+	export slave=1
+	export tertiary=1
+	export redshift=1
+
 fi
