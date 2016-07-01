@@ -108,6 +108,8 @@ prompt_stack=()
 trap 'prompt_stack=("${prompt_stack[@]}" "$BASH_COMMAND")' DEBUG
 
 function prompt_command() {
+  history -a
+
   local exit_code=$?
   # If the first command in the stack is prompt_command, no command was run.
   # Set exit_code to 0 and reset the stack.
