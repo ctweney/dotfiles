@@ -4,7 +4,7 @@
 # dirs  755 drwxr-xr-x (777 minus 022)
 umask 022
 
-export LESS=-dgisWmr
+export LESS=-dgisWmrFRXK
 
 export LSCOLORS="gxfxcxdxbxegedabagacad"
 # Always use color output for `ls`

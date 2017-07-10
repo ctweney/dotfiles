@@ -21,6 +21,8 @@
 	co = checkout
 	br = branch
 	unstash = stash apply
+	down = pull --rebase
+	onup = push
 
 [merge]
 	tool = araxis

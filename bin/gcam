@@ -8,5 +8,4 @@ fi
 MESSAGE="$@"
 
 git commit -a -m "$MESSAGE"
-git push
 

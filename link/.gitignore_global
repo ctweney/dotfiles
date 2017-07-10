@@ -64,3 +64,9 @@ npm-debug.log
 .swo
 .*.swp
 .*.swo
+
+# IntelliJ
+*.iml
+.idea/
+/*.iml
+
