@@ -1,3 +1,8 @@
+# ssl certs for dev
+nginx-chris.conf
+star_rescuetime_com.crt
+star_rescuetime_com.key
+
 # Compiled source #
 ###################
 *.com

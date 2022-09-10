@@ -20,8 +20,7 @@
 	ci = commit -a -v
 	co = checkout
 	br = branch
-	unstash = stash apply
-	down = pull --rebase
+	down = pull
 	onup = push
 
 [merge]
