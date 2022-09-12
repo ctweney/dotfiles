@@ -30,18 +30,18 @@ if [ `hostname` == "chronos.local" ]; then
   export HISTFILESIZE=100000               # big big history
   shopt -s histappend                      # append to history, don't overwrite it
 
+  # The next line updates PATH for the Google Cloud SDK.
+  if [ -f '/Users/chris/google-cloud-sdk/path.bash.inc' ]; then . '/Users/chris/google-cloud-sdk/path.bash.inc'; fi
+
+  # The next line enables shell command completion for gcloud.
+  if [ -f '/Users/chris/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/chris/google-cloud-sdk/completion.bash.inc'; fi
+
+  # enable auto-activate for pyenv
+  if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
+  export BASH_SILENCE_DEPRECATION_WARNING=1
+
+  # enable pyenv
+  eval "$(pyenv init -)"
+
 fi
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/chris/google-cloud-sdk/path.bash.inc' ]; then . '/Users/chris/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/chris/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/chris/google-cloud-sdk/completion.bash.inc'; fi
-
-# enable auto-activate for pyenv
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-
-export BASH_SILENCE_DEPRECATION_WARNING=1
-
-# enable pyenv
-eval "$(pyenv init -)"
