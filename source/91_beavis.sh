@@ -11,5 +11,6 @@ if [ `hostname` == "beavis.local" ]; then
 
   # enable pyenv
   eval "$(pyenv init -)"
-
+  # and pyenv-virtualenv
+  eval "$(pyenv virtualenv-init -)"
 fi
