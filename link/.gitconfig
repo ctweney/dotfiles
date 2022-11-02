@@ -1,5 +1,5 @@
 [core]
-        excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore
 	pager = less
 
 [push]
@@ -25,14 +25,9 @@
 	onup = push
 
 [merge]
-	tool = araxis
 	summary = true
 
-[diff]
-	tool = araxis
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
-[init]
-	templatedir = ~/.git_template
