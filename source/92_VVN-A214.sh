@@ -12,4 +12,7 @@ if [ `hostname` == "VVN-A214" ]; then
 
   export GPG_TTY=$(tty)
 
+  alias dev-creds='fix-my-infinity.sh && gimme-aws-creds --profile=vivun-development'
+  alias prod-creds='fix-my-infinity.sh && gimme-aws-creds --profile=vivun-prod'
+
 fi

@@ -142,9 +142,15 @@ function prompt_command() {
   PS1="$PS1$c0[$(date +"%H:%M:%S") / $(date -u +"%H:%M:%SZ")]$c9"
   PS1="$PS1$c1 \u@\h $c9"
   # git: [branch:flags]
-  PS1="$PS1$(prompt_git)\n"
+  # Add conda environment to prompt
+  if [ ! -z "$CONDA_DEFAULT_ENV" ]
+  then
+      PS1="$PS1$(prompt_git) $c1(conda: $CONDA_DEFAULT_ENV)$c9\n"
+  else
+      PS1="$PS1$(prompt_git)\n"
+  fi
   # working dir
-  PS1="$PS1\w"
+  PS1="\n$PS1\w"
   PS1="$PS1:\$ "
   # put prompt in title bar of terminal
   PS1="\[\033]0;\u@\h \w \007\]$PS1"
