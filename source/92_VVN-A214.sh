@@ -12,7 +12,10 @@ if [ `hostname` == "VVN-A214" ]; then
 
   export GPG_TTY=$(tty)
 
-  alias dev-creds='fix-my-infinity.sh && gimme-aws-creds --profile=vivun-development'
-  alias prod-creds='fix-my-infinity.sh && gimme-aws-creds --profile=vivun-prod'
+  alias vdev='export AWS_PROFILE=vivun-development ; export AWS_REGION=us-west-2 ; export AWS_DEFAULT_REGION=us-west-2 ; echo AWS_PROFILE=$AWS_PROFILE'
+  alias vprod='export AWS_PROFILE=vivun-prod ; export AWS_REGION=us-west-2 ; export AWS_DEFAULT_REGION=us-west-2 ; echo AWS_PROFILE=$AWS_PROFILE'
+
+  alias dev-creds='fix-my-infinity.sh && gimme-aws-creds --profile=vivun-development && vdev'
+  alias prod-creds='fix-my-infinity.sh && gimme-aws-creds --profile=vivun-prod && vprod'
 
 fi
