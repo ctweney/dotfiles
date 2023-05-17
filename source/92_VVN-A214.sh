@@ -15,8 +15,11 @@ if [ `hostname` == "VVN-A214" ]; then
   alias vdev='export AWS_PROFILE=vivun-development ; export AWS_REGION=us-west-2 ; export AWS_DEFAULT_REGION=us-west-2 ; echo AWS_PROFILE=$AWS_PROFILE'
   alias vprod='export AWS_PROFILE=vivun-production ; export AWS_REGION=us-west-2 ; export AWS_DEFAULT_REGION=us-west-2 ; echo AWS_PROFILE=$AWS_PROFILE'
   alias vstage='export AWS_PROFILE=vivun-staging ; export AWS_REGION=us-west-2 ; export AWS_DEFAULT_REGION=us-west-2 ; echo AWS_PROFILE=$AWS_PROFILE'
+  alias vdatasci='export AWS_PROFILE=vivun-datascience-production ; export AWS_REGION=us-west-2 ; export AWS_DEFAULT_REGION=us-west-2 ; echo AWS_PROFILE=$AWS_PROFILE'
 
   alias dev-creds='fix-my-infinity.sh && aws sso login --profile vivun-development && vdev'
   alias prod-creds='fix-my-infinity.sh && aws sso login --profile=vivun-production && vprod'
   alias stage-creds='fix-my-infinity.sh && aws sso login --profile=vivun-staging && vstage'
+  alias datasci-creds='fix-my-infinity.sh && aws sso login --profile=vivun-datascience-production && vdatasci'
+
 fi
