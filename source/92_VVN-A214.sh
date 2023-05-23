@@ -11,6 +11,8 @@ if [ `hostname` == "VVN-A214" ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 
   export GPG_TTY=$(tty)
+  export REQUESTS_CA_BUNDLE=/opt/homebrew/etc/openssl@3/cert.pem
+  export SSL_CERT_FILE=$REQUESTS_CA_BUNDLE
 
   alias vdev='export AWS_PROFILE=vivun-development ; export AWS_REGION=us-west-2 ; export AWS_DEFAULT_REGION=us-west-2 ; echo AWS_PROFILE=$AWS_PROFILE'
   alias vprod='export AWS_PROFILE=vivun-production ; export AWS_REGION=us-west-2 ; export AWS_DEFAULT_REGION=us-west-2 ; echo AWS_PROFILE=$AWS_PROFILE'
