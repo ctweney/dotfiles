@@ -1,0 +1,6 @@
+#!/bin/bash
+
+POD=$1
+NS="${2:-app-kafka-connect}"
+
+kubectl exec -it -n $NS "$POD" -- /bin/bash

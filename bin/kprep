@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ "${BASH_SOURCE[0]}" -ef "$0" ]
+then
+    echo "Hey, you should source this script, not execute it! Otherwise the env vars this script sets, won't be set."
+    exit 1
+fi
+
+ENV="${1:-development}"
+export AWS_PROFILE=vivun-"$ENV"
+
+aws sso login --profile vivun-"$ENV"
+aws eks --region us-west-2 update-kubeconfig --name hero-"$ENV"
+
+#
+# aws ecr get-login-password --profile vivun-"$ENV" --region us-west-2 | docker login --username AWS --password-stdin 588934249501.dkr.ecr.us-west-2.amazonaws.com
+

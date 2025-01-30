@@ -6,9 +6,9 @@
 	default = current
 
 [user]
-	name = Chris Tweney
-	email = chris.tweney@vivun.com
-	signingkey = 567921704F1F1B48
+	name = Callie Tweney
+	email = callie.tweney@vivun.com
+	signingkey = DF33F38FF0714FC4
 
 [colour]
 	diff = auto
@@ -20,7 +20,8 @@
 	st = status
 	ci = commit -a -v
 	co = checkout
-	br = branch
+	br = branch --track=inherit
+	fwb = checkout --track=inherit -b
 	down = pull
 	onup = push
 
@@ -36,4 +37,4 @@
 [gpg]
 	program = gpg
 [pull]
-	rebase = false
+	rebase = true

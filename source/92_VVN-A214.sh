@@ -21,4 +21,9 @@ if [ `hostname` == "VVN-A214" ]; then
 
   alias vlogin='aws sso login --profile vivun-development && vdev'
 
+  export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+  export LDFLAGS="-L/opt/homebrew/opt/postgresql@16/lib"
+  export CPPFLAGS="-I/opt/homebrew/opt/postgresql@16/include"
+  export PKG_CONFIG_PATH="/opt/homebrew/opt/postgresql@16/lib/pkgconfig"
+
 fi

@@ -23,3 +23,4 @@ function dotfiles() {
 }
 
 src
+export PATH="/Users/chris.tweney@vivun.com/.local/bin:$PATH"
